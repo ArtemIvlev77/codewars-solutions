@@ -12,6 +12,11 @@ So the result of function meeting(s) will be:
 "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
 It can happen that in two distinct families with the same family name two people have the same first name too. */
 
-
-const meeting = (s) => s.replace(/;/gi,' ').split(' ').map(v=>v.split(':').reverse().join(', ').toUpperCase()).sort()
-   .map(v=>'('+v+')').join('');
+const meeting = (s) =>
+  s
+    .replace(/;/gi, ' ')
+    .split(' ')
+    .map((v) => v.split(':').reverse().join(', ').toUpperCase())
+    .sort()
+    .map((v) => '(' + v + ')')
+    .join('');
